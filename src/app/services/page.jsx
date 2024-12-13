@@ -13,14 +13,14 @@ export default function ServicesPage() {
     {
       _id: "60d21b4667d0d8992e610c86",
       service_name: "TechFix",
-      service_image: "/service_img_1.png",
+      service_image: "/service_img_2.png",
       service_description:
         "TechFix provides comprehensive repair and maintenance services for all your electronic devices, ensuring they run smoothly and efficiently.",
     },
     {
       _id: "60d21b4667d0d8992e610c87",
       service_name: "FitLife",
-      service_image: "/service_img_1.png",
+      service_image: "/service_img_3.png",
       service_description:
         "FitLife offers personalized fitness training and nutrition plans to help you achieve your health and wellness goals.",
     },
@@ -35,9 +35,14 @@ export default function ServicesPage() {
               key={d._id}
               className="col-span-12 md:col-span-6 lg:col-span-4"
             >
-              <Link href={`/services/${d._id}`}>
-                <img src={d.service_image} />
-              </Link>
+              <figure className="border-2 border-slate-300 bg-slate-50 w-full h-full flex justify-center items-center">
+                <Link href={`/services/${d._id}`}>
+                  <img
+                    className="w-full h-full object-scale-down"
+                    src={d.service_image}
+                  />
+                </Link>
+              </figure>
             </div>
           );
         })}
