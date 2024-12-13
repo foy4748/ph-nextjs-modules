@@ -27,16 +27,21 @@ export default function ServicesPage() {
   ];
   return (
     <div>
-      <p className="font-bold text-3xl">ServicesPage</p>
-      {data.map((d) => {
-        return (
-          <div className="space-y-4">
-            <Link href={`/services/${d._id}`}>
-              <img src={d.service_image} />
-            </Link>
-          </div>
-        );
-      })}
+      <h1 className="font-bold text-3xl mb-4">ServicesPage</h1>
+      <section className="grid grid-cols-12 gap-4">
+        {data.map((d) => {
+          return (
+            <div
+              key={d._id}
+              className="col-span-12 md:col-span-6 lg:col-span-4"
+            >
+              <Link href={`/services/${d._id}`}>
+                <img src={d.service_image} />
+              </Link>
+            </div>
+          );
+        })}
+      </section>
     </div>
   );
 }

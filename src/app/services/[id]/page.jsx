@@ -27,11 +27,23 @@ export default function ServiceDetailPage({ params }) {
   const id = params.id;
   const singleData = data.find((d) => d._id == id);
   return (
-    <div>
-      <h1>ServiceDetailPage</h1>
-      <p>ID: {id}</p>
-      <p>{singleData.service_name}</p>
-      <img src={singleData.service_image} />
-    </div>
+    <>
+      <h1 className="font-bold text-3xl mb-4">ServiceDetailPage</h1>
+      <div className="flex items-center">
+        <div className="max-w-[400px] space-y-4">
+          <p>ID: {id}</p>
+          <p>{singleData.service_name}</p>
+          <h2 className="font-bold">Description</h2>
+          <p>{singleData.service_description}</p>
+        </div>
+
+        <figure className="w-full flex justify-center">
+          <img
+            className="w-full max-w-[400px]"
+            src={singleData.service_image}
+          />
+        </figure>
+      </div>
+    </>
   );
 }
