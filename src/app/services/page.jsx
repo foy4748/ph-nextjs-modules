@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -37,9 +38,12 @@ export default function ServicesPage() {
             >
               <figure className="border-2 border-slate-300 bg-slate-50 w-full h-full flex justify-center items-center">
                 <Link href={`/services/${d._id}`}>
-                  <img
+                  <Image
                     className="w-full h-full object-scale-down"
                     src={d.service_image}
+                    width={400}
+                    height={150}
+                    alt={`${d.service_name}`}
                   />
                 </Link>
               </figure>
